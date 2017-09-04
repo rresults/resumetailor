@@ -1,0 +1,200 @@
+Head of Sociological Lab:
+  org: Pskov Volny Institute
+  period: [2004-11-01, 2010-08-01]
+  desc: Providing students with experience in the field, conduction ad-hoc sociological projects, maintaining public relations activities
+  results: 
+    - Execution of research projects for external clients provided the Institute with additional income:
+       research: 1
+       pr: 1
+    - The most popular alumni reunion events in the history of the Institute were conducted:
+       pr: 1
+    - Start to use R in field of research projects and in education of students-sociologists:
+       r: 1
+       train: 1
+       floss: 1
+    - Delivering training and technical support on OpenOffice.org software suite for the teaching staff:
+       floss: 1
+       train: 1
+    - Engaging in negotiation with representatives of the Council of the Baltic Sea States:
+       eu: 1
+    - Providing presence in mass media with regular press releases and target groups events:
+       pr: 1
+    - Organization of Students Schools in frame of Youth Democracy Development programme by Olaf Palme Foundation (Sweden):
+       pr: 1
+       eu: 1
+    - Developing of training materials for Develop Your Business programme in partnership with Swedish Institute of Management and Stockholm School of Economics in Saint-Petersburg:
+       train: 1
+       eu: 1
+    - "Social problems of informal economy development in near-border villages of Chudskoe lake project in partnership with EURASIA Fund: field works and data analysis":
+       research: 2
+       eu: 1
+    - Full-cycle research project on pupils' preferences in higher education. Results were broadly discussed in local mass media:
+       research: 2
+       pr: 1
+    - "External EU Border Monitoring Project: Better Efficiency at Border Crossing Points as a Precondition for the Improved Cross-border CooperationEU borders: project co-development and research on Russian side":
+        research: 2
+        eu: 2
+
+
+Research consultant:
+  org: The Danish-Russian Economic Development Support Programme
+  period: [2008-03-01, 2010-12-01]
+  desc: Providing training and support to educational institutions in conducting market research 
+  results:
+    - Developing and conducting research project based on requirements of Danish International Development Agency:
+       eu: 1
+       research: 1
+    - Training and consultations of educational facilities staff in field of sociological and marketing research:
+       train: 1
+       research: 1
+    - Developing of software system for questionnaire design, opinion poll data input and computing of descriptive statistics (based on LimeSurvey and queXML):
+       research: 1
+       it: 1
+       floss: 1
+    - Composing a manual for staff of educational facilities on methods of sociological research and using of developed system:
+       train: 2
+
+Data Analyst:
+  org: Institute of Regional Development
+  period: [2011-08-01, 2013-08-01]
+  desc: Processing of opinion poll data, statistical analysis and producing reports
+  results:
+    - Questionnaire design, sampling, data analysis and visualization in longitude household research:
+       research: 2
+    - Saved at least 84 man-hours by automation of preparing reproducible reports for each of 28 districts of the region based on opinion poll data:
+       r: 1
+       research: 1
+    - "Made significant improvements in exit-poll procedure: got the Institute rid of a necessity to hire temporary telephone operators (8 men / 96 man-hours), increased speed of update of report (close to real-time), enriched the report with dynamic interactive charts and tables":
+       r: 1
+       research: 1
+    - Implemented previously unused in the Institute data visualization with high-scale city maps without software license expenses (OpenStreetMap data, R + QuantumGIS):
+       r: 1
+       floss: 1
+    - Increased speed and accuracy of manual data input from paper-based questionnaires by replacing storing data in separate files for each operator with single database (MySQL + LimeSurvey):
+       research: 1
+       floss: 1
+       it: 1
+    - Evaluating of the Data Documentation Initiative specification as standard for documentation for opinion poll datasets in the Institute:
+       research: 1
+    - SPSS technical support and consultations:
+       train: 1
+
+
+Marketing researcher / Data analyst:
+  org: Matrunich Consulting
+  period: [2009-11-01, 2015-01-01]
+  desc: Various ad-hoc projects in fields of sociological research, data analysis, training delivery, software systems
+  results: 
+    - Numerous field projects employing focus groups, face-to-face interviews, phone interviews, observation, cabinet research:
+       research: 2
+    - Wide range of full-cycle research projects on marketing and political topics:
+       research: 2 
+    - Optimization of pizza orders delivery with queue and spatial-temporal modeling:
+       r: 0.5
+    - Mining association rules and frequent itemsets for pizza restaurant chain:
+       r: 0.5
+    - Series of seminars on R basics, data processing, data visualization for higher education audience:
+       train: 2
+       r: 1
+    - Webinars on marketing research, public relations, IT-applications for small enterprises:
+       train: 2
+       it: 0.5
+       pr: 0.5
+    - Seminar “GNU/Linux Ubuntu for system administrators of marshal service”. Pskov, Russia:
+       train: 2
+       it: 1
+
+
+Senior Lecturer:
+  org: Pskov State University
+  period: [2011-10-01, 2015-01-01]
+  desc: Lectures and seminars in Data Analysis and Marketing Research
+  results: 
+    - Hands-on courses on Statistics for Public Relations specialists employing R software developed and conducted:
+        train: 1
+        pr: 0.5
+        r: 1
+    - Courses for adults on Marketing Research with participation of students in real world projects developed and conducted:
+       train: 1
+       research: 0.5
+
+Statistican (part-time):
+ org: &fao Food and Agriculture Organization of the United Nations
+ period: [2016-10-01, 2017-05-01]
+ desc: Technical support in conversion of food commodity codes from WTO and EU standards to FAO classification
+ results:
+   - Extraction of vast pieces of FAO experts' knowledge on world trade over a period of 14 years, stored in semi-automated, poorly documented databases:
+      r: 1
+      research: 1
+      un: 1
+      eu: 1 
+   - Software package updated to convert world food trade data from the WTO Harmonized System and the EU Combined Nomenclature:
+      r: 1
+      eu: 1 
+      un: 1
+ 
+Statistican:
+ org: *fao
+ period: [2014-10-01, 2015-12-01]
+ desc: Developing of statistical methodology to evaluate and correct annual world trade data and to estimate per-country food reserves
+ results: 
+   - Methodology developed to align trade data presented in various commodity classifications (WTO HS, EU CN, FAO FCL), area nomenclatures (UN M49 and its variations, EU Geonomenclature, FAO area list):
+       eu: 2
+       un: 2
+       research: 2
+   - Software package created to process trade data, to convert multiple units of measurements, to detect outliers and to impute missing values:
+       r: 1
+   - Interactive data visualization tool created to evaluate trade reports quality:
+       r: 0.5
+   - Training and consultations in data processing, visualization and R statistical software:
+       train: 1
+       research: 1
+       r: 1
+
+
+Data science trainer:
+ org: *fao
+ period: [2013-11-01, 2013-12-01]
+ desc: Assistance in translating of current methodology of FAO statistical department from various statistical software to R and deliver R training
+ results:
+  - Face-to-face practical training on data processing and visualization:
+      r: 1
+      train: 1
+      un: 2
+  - Evaluating legacy R-code for duplication, performance optimization:
+      r: 1
+  - Developing R-functions to gather data from Oracle DB (http://bit.ly/mav113):
+      r: 1
+      db: 1
+
+Communication coordinator:
+  org: German Russian Meeting Center in Pskov
+  period: [2005-06-01, 2006-05-01]
+  desc: Managing informational campaigns of the Center
+  results: 
+    - Presence in local mass media:
+        pr: 1
+    - Organizing press conferences and events:
+        pr: 1
+    - Media materials (web-site, video clips) producing:
+        pr: 1
+
+Journalist:
+  org: Pskovskaya Gubernia newspaper
+  period: [2002-06-01, 2002-10-01]
+  desc: Carry out interviews, take part in press conferences, prepare news publications
+  results: 
+    - Interviews taken with music bands, sportsmen, bikers, tech experts:
+        pr: 1
+
+Teacher of computer skills:
+  org: Pskov secondary school #21
+  period: [2002-04-01, 2002-05-01]
+  desc: Develop curriculum and teach classes for upper-form pupils
+  results:
+     - Free open source software chosen and installed in the computer lab:
+        floss: 1
+        it: 1
+     - Pupils got intensive computer skills course and were able to get a pass:
+        train: 1
+
