@@ -4,6 +4,8 @@ In case you have diverse work experience you would like to highlight specific jo
 
 ## Experience records file
 
+Each record consists of position title, name of organization, period of work, description of job and one or more results. Each result has to be labelled at least by one tag. Value of each tag is relative: the bigger the tag value, the higher in final resume it will be posted.
+
 
 ```yaml
 Research consultant:
@@ -25,12 +27,23 @@ Research consultant:
        train: 2
 ```
 
+## The resume tailoring algorithm
 
-## Steps to convert yaml records to markdown 
+A user keeps all job records in a yaml file. Also he/she has `head.md` and `tail.md` files to be added to the resume. When the user wants to generate a new resume he/she specifies tags of interest. Then script does the following:
 
-1. All related positions are sorted in accumulated tags value and reverse chronological order.
-    
-    1. For every position all results are filtered by tags 
-    2. For all filtered results total tags value is calculated.
-    
-2. In each position all related results are presented and sorted in accumulated tags value.
+1. Filters all positions where at least one of tags of interest presented.
+2. For each position keeps only results records with tags of interest.
+3. For each result calculates total value of tags and sort them accordingly. 
+4. For each position calculates total value of tags and sort them (with respect to passed years also).
+5. From selected positions and results generates Markdown file `jobs.md`.
+6. Converts these three Markdown files to a single PDF with help of Pandoc and LaTeX.
+
+## Resume building workflow
+
+1. Put your job records in `source/alex_jobs.yaml` file.
+2. Edit 'head.md` and `tail.md` in `source` directory.
+3. Source `generate_jobs.R` file.
+3. Run `generate_pdf()` function. It expects to find pandoc binary in `/usr/bin/pandoc`.
+4. Get your resume in `cv.pdf`.
+
+
