@@ -40,7 +40,7 @@ A user keeps all job records in a yaml file. Also he/she has `head.md` and `tail
 
 ## Resume building workflow
 
-1. Put your job records in `source/alex_jobs.yaml` file.
+1. Put your job records in `source/jobs.yaml` file.
 2. Edit 'head.md` and `tail.md` in `source` directory.
 3. Source `generate_jobs.R` file.
 3. Run `generate_pdf()` function. It expects to find pandoc binary in `/usr/bin/pandoc`.

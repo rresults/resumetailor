@@ -3,7 +3,7 @@ source("R/functions.R")
 tags <- c("train", "research", "pr", "eu", "un")
 cv_file <- "source/jobs.md"
 files <- c("head.md", "jobs.md", "tail.md")
-jobs <- yaml::yaml.load_file("source/alex_jobs.yaml")
+jobs <- yaml::yaml.load_file("source/jobs.yaml")
 
 
 dir <- dirname(cv_file)
