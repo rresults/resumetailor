@@ -3,9 +3,15 @@ library(lubridate)
 library(stringr)
 library(dplyr)
 
+#' Retrieve tags of a result
+#' @export
+
 result_tags <- function(result) {
   result[[1]]
 }
+
+#' Keep relevant tags in a result
+#' @export
 
 filter_tags <- function(result, tags){
   ids2keep <- names(result_tags(result)) %in% tags
@@ -13,17 +19,29 @@ filter_tags <- function(result, tags){
   result
 }
 
+#' Does result has specific tag
+#' @export
+
 result_has_tag <- function(result, tag) {
   any(tag %in% names(result_tags(result)))
 }
+
+#' Keep results with relevant tags
+#' @export
 
 filter_results <- function(results, tag) {
   keep(results, result_has_tag, tag = tag)
 }
 
+#' Extract tags from results
+#' @export
+
 results_tags <- function(results) {
   flatten(map(results, result_tags))
 }
+
+#' Extract all tags from a postion
+#' @export
 
 position_tags <- function(position) {
   position %>% 
@@ -31,21 +49,36 @@ position_tags <- function(position) {
     results_tags
 }
 
+#' Does position has specific tag
+#' @export
+
 position_has_tag <- function(position, tag) {
   any(tag %in% names(position_tags(position)))
 }
+
+#' Filter positions by tags
+#' @export
+#' 
 
 filter_positions <- function(positions, tags) {
   keep(positions, position_has_tag, tag = tags)
 }
 
+#' Calcucate total value of the position
+#' @export
+#' 
 position_total_value <- function(position) {
   sum(flatten_dbl(position_tags(position)))
 }
 
+#' Calcucate total value of the result
+#' @export
 result_total_value <- function(result) {
   sum(flatten_dbl(result_tags(result)))
 }
+
+#' Add alement to markdown file
+#' @export
 
 add_elem <- function(elem,
                      nbefore = 1L, 
@@ -62,6 +95,8 @@ add_elem <- function(elem,
   readr::write_file(elem, file, append = TRUE)
 }
 
+#' Generate PDF resume
+#' 
 generate_pdf <- function() {
   system2(
     command = "/usr/bin/pandoc", 
