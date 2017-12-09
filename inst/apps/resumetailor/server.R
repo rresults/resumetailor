@@ -1,6 +1,7 @@
 library(yaml)
 library(shiny)
 library(purrr)
+library(resumetailor)
 
 shinyServer(function(input, output, session) {
   
