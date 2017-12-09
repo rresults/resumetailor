@@ -11,6 +11,8 @@ shinyUI(fluidPage(
       h3("Position achievements"),
       actionButton("add_ach", "Add achievement"),
       achievementInput("ach1")),
-    tabPanel("Vacancy to fit"),
-    tabPanel("Get your tailored resume")
+    tabPanel("Vacancy to fit",
+             div(id = "tags")),
+    tabPanel("Get your tailored resume",
+             div(id = "resume"))
   )))

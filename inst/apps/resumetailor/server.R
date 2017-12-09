@@ -7,6 +7,8 @@ shinyServer(function(input, output, session) {
   jobs <- yaml::read_yaml(system.file("source/jobs.yaml", 
                                       package = "resumetailor"))
   
+  # Fill positions
+  
   jobs <- jobs[1:2]
   
   jobs_positions <- names(jobs)
@@ -22,11 +24,11 @@ shinyServer(function(input, output, session) {
         where = "afterEnd",
         ui = prefilledJobInput(job_desc, job, id)
       )
-      
-      
     }
   )
     
+  
+  # Achievement input button #####
   
   observeEvent(input$add_ach, {
     
@@ -36,7 +38,16 @@ shinyServer(function(input, output, session) {
       where = "afterEnd",
       ui = achievementInput(paste0("ach", ach_count))
     )
-    
-    
   })
+  
+  client_tags <- map(jobs, position_tags) %>% 
+    map(names) %>% unlist() %>% unname() %>% unique() %>% sort()
+  
+  insertUI("#tags",
+           "afterBegin",
+           ui = checkboxGroupInput(
+             "tags_box", "Choose topics of the vacancy",
+             client_tags)
+           )
+  
 })
