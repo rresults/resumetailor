@@ -12,10 +12,13 @@ jobInput <- function(
   
   ns <- NS(id)
   
-    tagList(
-    textAreaInput(ns("desc"), "Achievement", value = desc),
-    textInput(ns("topics"), "Topic tags", value = topics),
-    textInput(ns("values"), "Topic values", value = values)
-  )
-    
+  tagList(
+    textInput(ns("position"), "Position name", value = position_name),
+    textInput(ns("org"), "Organization", value = org),
+    dateRangeInput(ns("period"), 
+                   "Period of work", 
+                   start = startdate,
+                   end = enddate)
+      )
+  
 }
