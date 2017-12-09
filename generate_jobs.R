@@ -1,6 +1,6 @@
 source("R/functions.R")
 
-tags <- c("train", "research", "pr", "eu", "un")
+tags <- c("train", "research", "it", "floss", "r")
 cv_file <- "source/jobs.md"
 files <- c("head.md", "jobs.md", "tail.md")
 jobs <- yaml::yaml.load_file("source/jobs.yaml")
@@ -106,5 +106,5 @@ selected_jobs %>%
          nbefore = 0)))
     })
 
-# browseURL(generate_pdf("markdown-cv"))
+ # browseURL(generate_pdf("markdown-cv"))
 

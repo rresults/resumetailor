@@ -1,6 +1,7 @@
 #' Input with achievement description
 #' 
 #' @export
+#' @import shiny
 
 achievementInput <- function(id, desc = "", topics = "", values = "") {
   
@@ -11,6 +12,5 @@ achievementInput <- function(id, desc = "", topics = "", values = "") {
     textInput(ns("topics"), "Topic tags", value = topics),
     textInput(ns("values"), "Topic values", value = values)
   )
-  
   
 }
