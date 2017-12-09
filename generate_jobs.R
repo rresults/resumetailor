@@ -7,6 +7,8 @@ jobs <- yaml::yaml.load_file("source/jobs.yaml")
 
 
 dir <- dirname(cv_file)
+
+# Add position from item title
 jobs <- map2(jobs, names(jobs), 
              function(position, name) {
                position["position"] <- name

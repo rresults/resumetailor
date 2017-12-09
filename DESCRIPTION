@@ -20,4 +20,5 @@ Imports:
     readr,
     shiny,
     stringr,
+    tibble,
     yaml
