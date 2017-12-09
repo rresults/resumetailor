@@ -1,5 +1,6 @@
 library(shiny)
 library(resumetailor)
+library(resumetailor)
 
 shinyUI(fluidPage(
   
@@ -15,5 +16,10 @@ shinyUI(fluidPage(
     tabPanel("Vacancy to fit",
              div(id = "tags")),
     tabPanel("Get your tailored resume",
-             div(id = "resume"))
+             div(id = "resume"),
+             includeMarkdown(system.file("source/head.md",
+                                         package = "resumetailor")),
+             includeMarkdown(system.file("source/tail.md",
+                                         package = "resumetailor"))
+             )
   )))

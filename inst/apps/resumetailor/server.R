@@ -2,6 +2,7 @@ library(yaml)
 library(shiny)
 library(purrr)
 library(resumetailor)
+library(markdown)
 
 shinyServer(function(input, output, session) {
   
@@ -50,5 +51,6 @@ shinyServer(function(input, output, session) {
              "tags_box", "Choose topics of the vacancy",
              client_tags)
            )
+  
   
 })
