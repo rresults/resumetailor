@@ -11,8 +11,6 @@ shinyServer(function(input, output, session) {
   
   # Fill positions
   
-  jobs <- jobs[1:2]
-  
   jobs_positions <- names(jobs)
   jobs_ids <- paste0("job", seq_along(jobs))
   
