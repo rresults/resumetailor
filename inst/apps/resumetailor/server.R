@@ -59,14 +59,36 @@ shinyServer(function(input, output, session) {
   observeEvent(
     input$generate_cv_btn, {
       jobs_md_file <- reactiveVal(generate_jobs_md(jobs, input$tags_box))
-      output$jobs_md_file <- renderText(jobs_md_file())
       output$jobs_md <- renderText(renderMarkdown(file = jobs_md_file()))
+      # removeUI(selector = "div:has(> #resume_pdf")
+      # insertUI("#place4cv", "afterBegin",
+      #          ui = tagList(
+      #            p(),
+      #            downloadLink("resume_pdf", "Download resume in PDF")
+      #            )
+      # )
+      # removeUI(selector = "div:has(> #cvurl)")
+      # randomurl <- reactiveVal({
+      #   n <- 1
+      #   a <- do.call(
+      #     paste0, 
+      #     replicate(
+      #       3, 
+      #       sample(c(letters, LETTERS), n, TRUE), FALSE))
+      #   paste0(a, sprintf("%04d", sample(9999, n, TRUE)), sample(c(letters, LETTERS), n, TRUE))
+      # })
+      # 
+      # insertUI("#place4cv", "afterEnd",
+      #          ui =  tagList(
+      #            p(),
+      #            a(href = paste0("https://tailor.jobs/", randomurl()))
+      # ))
     }
   )
   
   # Download PDF ####
   
-  output$resume.pdf <- downloadHandler(
+  output$resume_pdf <- downloadHandler(
     filename = paste0("resume_", lubridate::today(), ".pdf")
     , content = function(file) {
       file.copy(

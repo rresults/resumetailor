@@ -11,14 +11,15 @@ shinyUI(fluidPage(
     tabPanel(
       "Keep your job history",
       
-      h3("Position achievements"),
+      h3("Job history"),
       actionButton("add_ach", "Add achievement"),
       achievementInput("ach1")),
     tabPanel("Vacancy to fit",
              div(id = "tags"),
-             actionButton("generate_cv_btn", "Generate resume!")
+             actionButton("generate_cv_btn", "Generate resume!"),
+             div(id = "place4cv")
              ),
-    tabPanel("Get your tailored resume",
+    tabPanel("Check your tailored resume",
              p(),
              downloadLink("resume.pdf", "Download PDF"),
              p(),
