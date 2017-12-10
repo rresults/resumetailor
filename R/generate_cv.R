@@ -1,10 +1,10 @@
-#' Generate CV
+#' Generate CV part with jobs
 #' @import purrr
 #' @import tibble
 #' @import dplyr
 #' @export
 
-generate_cv <- function(jobs, tags, head, tail) {
+generate_jobs_md <- function(jobs, tags) {
   
   # Add position from item title
   jobs <- map2(jobs, names(jobs), 
@@ -71,6 +71,39 @@ generate_cv <- function(jobs, tags, head, tail) {
       position
     }) 
   
-  
+ cv_file <- tempfile("jobs", fileext = ".md") 
    
+ selected_jobs %>% 
+  walk(function(p) {
+    add_elem(p$position, 
+             nafter = 0,
+             symbefore = "#### ", 
+             symafter = " at ", file = cv_file)
+    add_elem(p$org, nbefore = 0, nafter = 2, file = cv_file)
+    add_elem(pluck(p, "period", 1) %>% 
+               lubridate::ymd() %>% 
+               format("%Y %B"), 
+             symafter = " - ", 
+             nafter = 0, file = cv_file)
+    add_elem(pluck(p, "period", 2) %>% 
+               lubridate::ymd() %>% 
+               format("%Y %B"), 
+             symafter = ". ",
+             nbefore = 0,
+             nafter = 0, file = cv_file)
+    add_elem(p$desc, nbefore = 0, nafter = 2, symafter = ". ", file = cv_file)
+    # walk(pluck(p, "results"), 
+    #      ~ add_elem(names(.x),
+    #                 nbefore = 0,
+    #                 symbefore = "  * ", 
+    #                 symafter = ". "))
+    walk(pluck(p, "results_ord"),
+         ~ walk(.x, 
+                ~ add_elem(.x, symbefore = "  * ", symafter = ".", 
+         nafter = 1,
+         nbefore = 0, file = cv_file)))
+    })
+ 
+ cv_file
+ 
 }

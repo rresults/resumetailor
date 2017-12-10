@@ -3,6 +3,8 @@ library(shiny)
 library(purrr)
 library(resumetailor)
 library(markdown)
+library(lubridate)
+library(readr)
 
 shinyServer(function(input, output, session) {
   
@@ -40,6 +42,8 @@ shinyServer(function(input, output, session) {
     )
   })
   
+  # Position tags ####
+  
   client_tags <- map(jobs, position_tags) %>% 
     map(names) %>% unlist() %>% unname() %>% unique() %>% sort()
   
@@ -50,5 +54,25 @@ shinyServer(function(input, output, session) {
              client_tags)
            )
   
+  output$position_tags <- renderText(input$tags_box)
+  
+  observeEvent(
+    input$generate_cv_btn, {
+      jobs_md_file <- reactiveVal(generate_jobs_md(jobs, input$tags_box))
+      output$jobs_md_file <- renderText(jobs_md_file())
+      output$jobs_md <- renderText(renderMarkdown(file = jobs_md_file()))
+    }
+  )
+  
+  # Download PDF ####
+  
+  output$resume.pdf <- downloadHandler(
+    filename = paste0("resume_", lubridate::today(), ".pdf")
+    , content = function(file) {
+      file.copy(
+        system.file("cv.pdf", package = "resumetailor"),
+        file)
+    }
+  )
   
 })

@@ -80,6 +80,7 @@ result_total_value <- function(result) {
 
 #' Add alement to markdown file
 #' @export
+#' @import readr
 
 add_elem <- function(elem,
                      nbefore = 1L, 

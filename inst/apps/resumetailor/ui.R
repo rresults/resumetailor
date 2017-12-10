@@ -1,6 +1,7 @@
 library(shiny)
 library(resumetailor)
-library(resumetailor)
+library(markdown)
+
 
 shinyUI(fluidPage(
   
@@ -14,12 +15,18 @@ shinyUI(fluidPage(
       actionButton("add_ach", "Add achievement"),
       achievementInput("ach1")),
     tabPanel("Vacancy to fit",
-             div(id = "tags")),
+             div(id = "tags"),
+             actionButton("generate_cv_btn", "Generate resume!")
+             ),
     tabPanel("Get your tailored resume",
+             p(),
+             downloadLink("resume.pdf", "Download PDF"),
+             p(),
              div(id = "resume"),
-             includeMarkdown(system.file("source/head.md",
-                                         package = "resumetailor")),
-             includeMarkdown(system.file("source/tail.md",
-                                         package = "resumetailor"))
+             # includeMarkdown(system.file("source/head.md",
+             #                             package = "resumetailor")),
+             htmlOutput("jobs_md") #,
+             # includeMarkdown(system.file("source/tail.md",
+             #                             package = "resumetailor"))
              )
   )))
